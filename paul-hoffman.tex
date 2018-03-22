@@ -23,18 +23,18 @@
 \documentclass[10pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
 
 %_ \usepackage{helvet} % Default font is the helvetica postscript font
-\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
+%_ \usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
 
 %_ To use a true type font:
 %_ Obtain your properly licensed Calibri .ttf font files. For the Calibri-family these are four files: Regular calibri.ttf, Bold calibrib.ttf, Bold-Italic calibriz.ttf, ItalicFont calibrii.ttf.
 %_ Place them in your OS's truetype font directory in their own folder. For Ubuntu the path would be "/usr/share/fonts/truetype/calibri/"
 %_ As Xavier mentioned you use LuaLaTeX with the fontspec package to specify the Calibri font family:
 %_ 
-%_ \usepackage{fontspec}
-%_ \setmainfont[Path=/usr/share/fonts/truetype/calibri/,
-%_     BoldItalicFont=calibriz.ttf,
-%_     BoldFont      =calibrib.ttf,
-%_     ItalicFont    =calibrii.ttf]{calibri.ttf}
+\usepackage{fontspec}
+\setmainfont[Path=/usr/share/fonts/truetype/calibri/,
+    BoldItalicFont=calibriz.ttf,
+    BoldFont      =calibrib.ttf,
+    ItalicFont    =calibrii.ttf]{calibri.ttf}
 
 
 \usepackage{hyperref}
