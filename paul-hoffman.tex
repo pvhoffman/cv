@@ -1,227 +1,150 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Long Professional Curriculum Vitae
-% LaTeX Template
-% Version 1.1 (9/12/12)
-%
-% This template has been downloaded from:
-% http://www.latextemplates.com
-%
-% Original author:
-% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
-%
-% Important note:
-% This template requires the res.cls file to be in the same directory as the
-% .tex file. The res.cls file provides the resume style used for structuring the
-% document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% start of file `paul-hoffman.tex'.
+%% Copyright 2018
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\documentclass[11pt,letterpaper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\documentclass[10pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-%_ \usepackage{helvet} % Default font is the helvetica postscript font
-%_ \usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
-
-%_ To use a true type font:
-%_ Obtain your properly licensed Calibri .ttf font files. For the Calibri-family these are four files: Regular calibri.ttf, Bold calibrib.ttf, Bold-Italic calibriz.ttf, ItalicFont calibrii.ttf.
-%_ Place them in your OS's truetype font directory in their own folder. For Ubuntu the path would be "/usr/share/fonts/truetype/calibri/"
-%_ As Xavier mentioned you use LuaLaTeX with the fontspec package to specify the Calibri font family:
-%_ 
-\usepackage { progressbar }
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
 \usepackage{fontspec}
-\usepackage{array}
-\usepackage{caption}
-% for linux
-% \setmainfont[Path=/usr/share/fonts/truetype/calibri/,
-% for windows
-\setmainfont[Path=c:/windows/fonts/,
-    BoldItalicFont=calibriz.ttf,
-    BoldFont      =calibrib.ttf,
-    ItalicFont    =calibrii.ttf]{calibri.ttf}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+% adjust the page margins
+%_ \usepackage[scale=0.8]{geometry}
+\usepackage[scale=1.0,hmargin=0.63in,vmargin=0.75in]{geometry}
+\usepackage{multicol}
+\usepackage{import}
 
 
-\usepackage{hyperref}
+% personal data
+\name{Paul}{Hoffman}
+\title{Software Engineer}                               % optional, remove / comment the line if not wanted
+\address{44994 Muirfield Dr, Temecula, CA 92592}{}{}    % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+ 
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
 
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
 
-\newsectionwidth{0pt} % Stops section indenting
+\setlength{\tabcolsep}{12pt}
 
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-23mm}
 
-%----------------------------------------------------------------------------------------
-%	YOUR NAME AND ADDRESS(ES) SECTION
-%----------------------------------------------------------------------------------------
+\begin{center}
+\begin{tabular}{ c c c }
+ \faEnvelopeO\enspace pvhoffman@protonmail.com & \faGithub\enspace github.com/pvhoffman & \faMobile\enspace 951-375-6430\\  
+\end{tabular}
+\end{center}
 
-\name{Paul V. Hoffman\\ \\} % Your name at the top
-
-% If you don't want one of the addresses, simply remove all the text in the first or second \address{} bracket
-
-%_ \address{{\bf School Address} \\ Department of Study \\ University \\ City, State 12345 \\ (000) 111-1111} % Your address 1
-\address{}
-%_ \address{{\bf Address} \\ 44994 Muirfield Drive \\ Temecula, CA 92592 \\ (951) 375-6430} % Your address 2
-\address{44994 Muirfield Drive \\ Temecula, CA 92592 \\ (951) 375-6430 \\ \href{mailto:pvhoffman@gmail.com}{pvhoffman@gmail.com}} % Your address 2
-
-%----------------------------------------------------------------------------------------
-
-\begin{resume}
-
-%----------------------------------------------------------------------------------------
-%	OBJECTIVE SECTION
-%----------------------------------------------------------------------------------------
-
-%_ \section{\centerline{OBJECTIVE}}
-\section{Objective}
-\vspace{8pt} % Gap between title and text
-Seeking a position as a software engineer to employ my experience, knowledge, and positive attitude across a broad range of skills and tools to efficiently provide reliable and consistent applications and solutions.
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
-%_ \section{\centerline{EDUCATION}} 
-%_ 
-%_ \vspace{8pt} % Gap between title and text
-%_ 
-%_ {\sl Master of Science}, 
-%_ Industrial/Organizational Psychology \\ 
-%_ Rensselaer Polytechnic Institute, Troy, NY \hfill December 1990 \\ 
-%_ THESIS - Job Evaluation: Compensating for Comparable Worth \\
-%_ GPA 3.70 
-%_  
-%_ {\sl Bachelor of Science}, Psychology \\ 
-%_ Utica College of Syracuse University, Utica, NY \hfill May 1987
-%_ 
-%_ {\sl Bachelor of Science}, Psychology \\ 
-%_ Utica College of Syracuse University, Utica, NY \hfill May 1987
-
-%----------------------------------------------------------------------------------------
+\section{SUMMARY}
+\begin{minipage}{\maincolumnwidth}%
+	{
+            Adept software engineer with 15+ years experience designing and developing enterprise solutions in collaborative, fast paced, high demand environments.
+        }
+\end{minipage}%
  
-%_ \vspace{0.1in} % Some whitespace between sections
-\noindent\rule{\textwidth}{1pt}
 
-%----------------------------------------------------------------------------------------
-%	PROFESSIONAL EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Experience} 
-
-\vspace{8pt} % Gap between title and text
-
-{\sl Principal Software Engineer - Becton Dickinson \& Company} \hfill April 2015 -- Present \\
-San Diego, CA 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Analyze and implement resolutions for complex concurrency problems in middleware applications.
-\item Author detailed software design, functional, and security specification documents to provide clear understanding of product for stakeholders, developers, testers, and project managers.
-\item Implement documentation and software conformance for Defense Information System Agency's (DISA) Security Technical Implementation Guide regulations for Microsoft SQL Server databases, Microsoft .NET Framework, Microsoft Windows Server 2012, Microsoft Windows Internet Information Server, and medical devices.
-\item Design and implement interoperability solutions for software solutions developed with different runtime requirements, platforms, and libraries.
-\item Provide solutions for new features and existing production issues in mission critical software applications while quickly obtaining domain knowledge and experience.  
-\item Analyze and interpret the needs of support and integration staff to identify and fulfill development tasks necessary to meet requirements.
-\item Oversee and provide guidance for work done by junior colleagues during product design and development.
+\section{EXPERIENCE}
+{\customcventry{April 2015 - Present}{Principal Software Engineer}{Becton, Dickinson and Company}{San Diego, CA}{}
+{\begin{itemize}
+    \item Designed and developed high availability, robust, and secure server applications, using C, C++, and C\# on Windows Server platforms, to provide communication capabilities and message transformation functionality for regulated medical devices.
+    \item Increased business value of existing deployed medical devices by engineering enterprise solutions to capture data from these devices for inclusion into patient medical records and device maintenance metrics.
+    \item Researched ,developed, and documented resolutions for over 1300 cybersecurity vulnerability identified for applications, hosting operating system, web server, and database server in order to obtain an authority to operate within a Department of Defense Medical Treatment Facility.
+    \item Accelerated product adoption and enhanced security posture of ASP.NET web applications by integrating identity provider independent enterprise wide authentication management solution. 
+    \item Restructured middleware server application implementation of TCP/IP, in C and C++, to resolve concurrency and threading issues in order to increase interoperability and reliability with 3rd party electronic medical record system vendors.
+    \item Created organization wide IPSEC policy with single click installation and coordinated testing effort between affected disparate business units to ensure continuous connectivity, interoperability, and security of data in transit.
+    \item Authored software architectural design documents, implementation and installation guides, and security white papers to improve product support for developers, testers, DevOps, end users, and customers.
 \end{itemize}
+}
 
-{\sl Senior Software Engineer - Yellow Magic} \hfill November 2001 -- March 2015 \\
-Murrieta, CA 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Create complex iPad and iPhone applications and supporting server side software, with secure back-end database queries and updates via RESTful HTTP methods, for enterprise sales team management purposes.
-\item Design and create web applications for enterprise reporting and consumer search using modern front-end Javascript libraries such as jQuery and AngularJS.
-\item Increased overall system performance by implementing and exposing software components written in C and C++ to higher level languages via COM on Windows.
-\item Re-factored and re-implemented legacy applications and libraries for use on modern operating systems and hardware architectures.
-\item Planned and introduced new and complex software features based on client needs while maintaining stability and backward compatibility.
-\item Migrated production code and documentation SCM from Visual Source Safe to Git.
+{\customcventry{November 2001 - March 2015}{Senior Software Engineer }{Yellow Magic, Inc.}{Murrieta, CA}{}
+{\begin{itemize}
+    \item Created complex IOS applications in Objective-C and RESTful back-end server-side web applications in ASP.NET to increase productivity in enterprise sale team management and decrease errors in remote contract capture.
+    \item Designed and developed web applications for enterprise reporting and consumer product search using modern front-end JavaScript libraries such as jQuery and AngularJS.
+    \item Increased overall system performance by implementing and exposing software components developed in C and C++ to higher level .NET languages via COM on Windows.
+    \item Re-factored and re-implemented legacy applications and libraries developed in C and C++ for use on modern operating systems and hardware architectures.
+    \item Planned and introduced new and complex software features based on collaborative communication with stake-holders while maintaining stability and backward compatibility with existing enterprise applications.
+    \item Migrated production code and documentation SCM from Visual Source Safe to Git.
 \end{itemize}
+}
 
-
-{\sl Senior Software Engineer - Sound Vet} \hfill March 2006 - June 2006 \\
-Murrieta, CA 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Contracted to implement C++ COM interfaces into C libraries for digital x-ray equipment for the purpose of inter-op consumption in C\# and VB.NET.
-\item Advised and worked with software development team to successfully fulfill enterprise requirements for portable X-ray machines.
-\item Produced precise technical documentation and supporting material for use by internal development team.
+{\customcventry{March 2006 - June 2006}{Software Engineering Consultant}{SoundVet}{Carlsbad, CA}{}
+{\begin{itemize}
+    \item Implemented COM interfaces in C++ to provide interoperability access to libraries provided by 3rd party vendors for digital x-ray equipment to integrate into existing .NET applications used by veterinary personnel.
+    \item Advised and worked with software development team to successfully fulfill enterprise requirements for portable X-ray machines.
+    \item Produced precise technical documentation and supporting material for use by internal development team.
 \end{itemize}
+}
 
-{\sl Field Communications Technician - Candou Communications} \hfill 2000 - 2002 \\
-Murrieta, CA 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Install, maintain, and troubleshoot cellular and police communication equipment to standards required by Motorola.
-\item Coordinated with 4 person team to reliably install digital communications systems for Orange County Police Department Vehicles ranging from undercover cars, motorcycles, and prison buses.
-\item Successfully installed and diagnosed problems with cellular communications rack systems.
+\section{RELEVANT SKILLS}
+{
+\begin{itemize}
+    \item \textbf{Programming Languages:}  C, C++, C\#, JavaScript, Python, Powershell, SQL
+    \item \textbf{Platforms:}  .NET, Linux, Windows Server 2012/2016, AWS, Azure
 \end{itemize}
- 
-{\sl Small Unit Leader/Field Technician - United States Marine Corps} \hfill 1993 - 2000 \\
-Murrieta, CA 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Lead and maintained the necessary technical knowledge and discipline of teams consisting of 30 Marines purposed to install and operate remote communications outposts which provided secure mission critical digital bandwidth to field commanders.
-\item Received multiple awards and commendations for leadership and technical proficiency.
-\item Maintained and analyzed personnel documentation for the purpose of continuing individual improvement of Marines within my unit.
-\item Successfully completed many technical and leadership training courses.
+}
+
+\section {EDUCATION}
+{
+{\customcventry{1996 - 2000}{Computer Science Curriculum - GPA: 3.7}{Park University}{Camp Pendleton Extension, CA}{}{}} 
+\textbf {Relevant Activities:}
+\begin{itemize}
+    \item \href{https://www.coursera.org/course/ml}{Coursera Machine Learning Course.}
+    \item \href{https://www.coursera.org/course/datascitoolbox}{Coursera Data Scientist's Toolbox Course.}
+    \item \href{https://www.coursera.org/course/rprog}{Coursera R Programming Course.}
+    \item \href{https://www.coursera.org/course/exdatal}{Coursera Exploratory Data Analysis Course.}
 \end{itemize}
+}
 
-\vspace{0.2in} % Some whitespace between sections
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
-\noindent\rule{\textwidth}{1pt}
-\section{Professional Skills} 
-\vspace{8pt} % Gap between title and text
-%_ \item {\sl Development Languages} \\ 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item {\sl Languages} \\
-\begin{tabular}{ l l r }
-C++ & \progressbar[width=10 em,subdivisions=1]{0.8} & 10 years \\
-C\#  & \progressbar[ width=10 em,subdivisions=1]{0.8} & 8 years \\
-C      & \progressbar[ width=10 em,subdivisions=1]{0.7} & 8 years \\
-Javascript & \progressbar[ width=10 em,subdivisions=1]{0.8} & 7 years\\
-Python & \progressbar[ width=10 em,subdivisions=1]{0.8} & 7 years\\
-PHP & \progressbar[ width=10 em,subdivisions=1]{0.6} & 3 years \\
-Powershell & \progressbar[ width=10 em,subdivisions=1]{0.8} & 3 years \\
-SQL & \progressbar[ width=10 em,subdivisions=1]{0.75} & 7 years \\
- \end{tabular}
-\vspace{8pt} % Gap between title and text
-\item {\sl Platforms} \\
-\begin{tabular}{ l l r }
-iOS & \progressbar[width=10 em,subdivisions=1]{0.4} & 3 years \\
-Linux & \progressbar[width=10 em,subdivisions=1]{0.4} & 3 years \\
-Windows & \progressbar[width=10 em,subdivisions=1]{0.9} & 12 years \\
- \end{tabular}
-\vspace{8pt} % Gap between title and text
-\item {\sl Technologies} \\
-\begin{tabular}{ l l r }
-ASP.NET & \progressbar[ width=10 em,subdivisions=1]{0.6} & 5 years\\
-Apache HTTP Server & \progressbar[ width=10 em,subdivisions=1]{0.6} & 5 years\\
-Microsoft IIS & \progressbar[ width=10 em,subdivisions=1]{0.8} & 7 years\\
-Microsoft SQL Server & \progressbar[ width=10 em,subdivisions=1]{0.7} & 5 years \\
-Microsoft Visual Studio & \progressbar[ width=10 em,subdivisions=1]{0.8} & 10 years\\
-XCode & \progressbar[ width=10 em,subdivisions=1]{0.5} & 3 years \\
- \end{tabular}
-\end{itemize}
-%_ C++ \progressbar[width=10 em,subdivisions=1]{0.8}\\
-%_ C\# \progressbar[ width=10 em,subdivisions=1]{0.8}\\
-%_ \begin{itemize} \itemsep -2pt % Reduce space between items
-%_ ASP, ASP.NET, C, C++, C\#, CSS, HTML, Java, Javascript, Objective-C, PHP, Powershell, Python, R, SQL.
-%_ \item {\sl Technologies} \\ .NET,  IIS/ISAPI, iOS, Debian Linux, Mac OS X,  Microsoft Visual Studio, Microsoft SQL Server, STIGs, Win32,Windows 7, 8, 10, Server 2008, 2012 2016, Xcode.
-%_ \end{itemize}
-
-\vspace{0.2in} % Some whitespace between sections
-
-\noindent\rule{\textwidth}{1pt}
-\section{Education} 
-\vspace{8pt} % Gap between title and text
-{\sl Park University - Camp Pendleton Extension} \hfill 1996 - 2000 \\
-\begin{itemize} \itemsep -2pt % Reduce space between item
-\item Computer \& Information Systems curriculum.
-\item 3.75 GPA.
-\end{itemize}
-{\sl Extracurricular Activites} \\
-\begin{itemize} \itemsep -2pt % Reduce space between item
-\item \href{https://www.coursera.org/course/ml}{Coursera Machine Learning Course.}
-\item \href{https://www.coursera.org/course/datascitoolbox}{Coursera Data Scientist's Toolbox Course.}
-\item \href{https://www.coursera.org/course/rprog}{Coursera R Programming Course.}
-\item \href{https://www.coursera.org/course/exdatal}{Coursera Exploratory Data Analysis Course.}
-\end{itemize}
-
-%----------------------------------------------------------------------------------------
-
-
-
-\end{resume} 
 \end{document}
+
+
